@@ -1,94 +1,395 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Agro Paraná</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Forte | O Futuro Sustentável</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-            display: flex;
-            justify-content: center; /* centraliza na horizontal */
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
 
-        .container {
-            width: 800px;
-            background: white;
-            padding: 30px;
-            text-align: center; /* centraliza texto */
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+body{
+    background:#f5f7f4;
+    color:#333;
+}
 
-        img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin: 10px 0;
-        }
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(20,65,20,.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
 
-        ul {
-            text-align: left; /* listas ficam mais legíveis */
-        }
-    </style>
+nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+}
 
+.logo{
+    color:#fff;
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#8BC34A;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#8BC34A;
+}
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 38px;
+    background:#4CAF50;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#2E7D32;
+    transform:translateY(-3px);
+}
+
+section{
+    padding:100px 10%;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    color:#1b5e20;
+    margin-bottom:60px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#2E7D32;
+    margin-bottom:15px;
+}
+
+.numbers{
+    background:#1b5e20;
+    color:white;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:55px;
+    color:#8BC34A;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:.4s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+.cta{
+    background:linear-gradient(135deg,#2E7D32,#4CAF50);
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:42px;
+}
+
+footer{
+    background:#0f3a12;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+</style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-    <h1>🌾 Agronegócio no Paraná</h1>
+<nav>
 
-    <p>
-        O agronegócio é a principal força econômica do estado, representando cerca de 35% do PIB paranaense.
-        O setor se destaca pela forte industrialização, mecanização avançada e pelo maior cooperativismo do país.
-        O estado é líder nacional na produção de cevada e tem projeções de colheitas que superam 45 milhões de toneladas de grãos.
-    </p>
+<div class="logo">
+Agro<span>Forte</span>
+</div>
 
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtjMv0VCmGeH8RvWyGTCxZeTWZxeTMkXSqsoRnY8Z1_g&s=10" 
-         alt="Agronegócio no Paraná">
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#beneficios">Benefícios</a></li>
+<li><a href="#galeria">Galeria</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
 
-    <h2>🌱 Importância do agro no Paraná</h2>
+</nav>
 
-    <ul>
-        <li>Representa cerca de 30% a 35% do PIB do estado</li>
-        <li>Um dos maiores exportadores agrícolas do Brasil</li>
-        <li>Grande presença de cooperativas agrícolas</li>
-    </ul>
+</header>
 
-    <h2>🌾 Principais produções</h2>
+<section class="hero">
 
-    <ul>
-        <li>Soja</li>
-        <li>Milho</li>
-        <li>Trigo</li>
-        <li>Cana-de-açúcar</li>
-        <li>Mandioca</li>
-        <li>Batata</li>
-        <li>Frutas e hortaliças</li>
-    </ul>
+<div>
 
-    <h2>🐄 Pecuária</h2>
+<h1>Agro Forte</h1>
 
-    <ul>
-        <li>Frango</li>
-        <li>Suínos</li>
-        <li>Leite</li>
-        <li>Ovos</li>
-    </ul>
+<p>
+O futuro sustentável começa no campo. Tecnologia, inovação e respeito ao meio ambiente
+transformam a agricultura em uma força capaz de alimentar o mundo e preservar as próximas gerações.
+</p>
 
-    <h2>💡 Resumo</h2>
-
-    <p>
-        O agro do Paraná é forte, moderno e muito importante para a economia do Brasil.
-    </p>
-
-    <img src="https://www.gov.br/secom/pt-br/acompanhe-a-secom/noticias/2024/12/governo-lanca-plataforma-agro-brasil-sustentavel/agro-mais-sustentavel.jpg/@@images/8653a4b5-c2f0-4ccd-aec4-7869b95b649e.jpeg" 
-         alt="Agronegócio sustentável">
+<a href="#sobre" class="btn">Conheça o Projeto</a>
 
 </div>
 
+</section>
+
+<section id="sobre">
+
+<h2 class="title">Construindo um Futuro Sustentável</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌱 Agricultura Sustentável</h3>
+<p>
+Produção eficiente utilizando práticas responsáveis, preservando o solo, a água e a biodiversidade.
+</p>
+</div>
+
+<div class="card">
+<h3>🚜 Tecnologia no Campo</h3>
+<p>
+Uso de drones, sensores, inteligência artificial e agricultura de precisão para aumentar a produtividade.
+</p>
+</div>
+
+<div class="card">
+<h3>🌎 Preservação Ambiental</h3>
+<p>
+Redução de impactos ambientais, incentivo ao reflorestamento e ao uso racional dos recursos naturais.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="numbers">
+
+<h2 class="title" style="color:white;">Nosso Impacto</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h2>95%</h2>
+<p>Eficiência no uso da água</p>
+</div>
+
+<div class="stat">
+<h2>+500</h2>
+<p>Produtores parceiros</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Compromisso com a sustentabilidade</p>
+</div>
+
+<div class="stat">
+<h2>2035</h2>
+<p>Visão para um agro mais verde</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="beneficios">
+
+<h2 class="title">Por que investir no Agro Forte?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌾 Produção Inteligente</h3>
+<p>
+Maior produtividade com menor desperdício de recursos naturais.
+</p>
+</div>
+
+<div class="card">
+<h3>💧 Economia de Água</h3>
+<p>
+Sistemas modernos de irrigação garantem eficiência e sustentabilidade.
+</p>
+</div>
+
+<div class="card">
+<h3>♻ Energia Limpa</h3>
+<p>
+Uso crescente de energia solar e fontes renováveis nas propriedades rurais.
+</p>
+</div>
+
+<div class="card">
+<h3>🌍 Responsabilidade Social</h3>
+<p>
+Fortalecimento das comunidades rurais e incentivo à agricultura familiar.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="galeria">
+
+<h2 class="title">Galeria</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80">
+
+<img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</section>
+
+<section class="cta" id="contato">
+
+<h2>Juntos cultivamos um amanhã melhor.</h2>
+
+<p style="margin-top:20px;font-size:18px;">
+A inovação no agronegócio é a chave para produzir mais, preservar o planeta e garantir alimento para as futuras gerações.
+</p>
+
+<a href="#" class="btn" style="background:white;color:#2E7D32;">
+Entrar em Contato
+</a>
+
+</section>
+
+<footer>
+
+<h3>Agro Forte © 2026</h3>
+
+<p>
+Tecnologia • Sustentabilidade • Inovação • Futuro Verde
+</p>
+
+</footer>
+
 </body>
-</html><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ72V4F-QTZbHV_ZUYBMyQIrw4daHONA9eXxLtLFiqqdhGhIF_56MojqA8&s=10" alt="">
+</html>
